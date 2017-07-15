@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  // sample data array
+  var sample_data = 
+      [{"carrera":"Ingeniero Eléctrico","cantidad":62},
+{"carrera":"Ingeniero Electrónico","cantidad":1046},
+{"carrera":"Ingeniero en Armas","cantidad":30},
+{"carrera":"Ingeniero en Informática","cantidad":370},
+{"carrera":"Ingeniero en Petróleo","cantidad":259},
+{"carrera":"Ingeniero Industrial","cantidad":3220},
+{"carrera":"Ingeniero Mecánico","cantidad":495},
+{"carrera":"Ingeniero Metalúrgico","cantidad":7},
+{"carrera":"","cantidad":null},
+{"carrera":"Ingeniero Naval","cantidad":93},
+{"carrera":"Ingeniero Químico","cantidad":508},
+{"carrera":"Lic.en Administración y Sistemas","cantidad":338},
+{"carrera":"Licenciado en Análisis de Sistemas","cantidad":110},
+{"carrera":"Licenciado en Ciencias Meteorológicas","cantidad":1},
+{"carrera":"Licenciado en Hidrografía","cantidad":16},
+{"carrera":"Licenciado en Informática","cantidad":88},
+{"carrera":"Licenciado en Oceanografía","cantidad":115}]
+  
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("carrera")         // key for which our data is unique on
+    .size("cantidad")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+</script>
+</body>
+</html>
